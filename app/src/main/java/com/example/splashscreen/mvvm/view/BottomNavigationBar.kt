@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
@@ -31,19 +32,24 @@ fun BottomNavigationBar(navController: NavController) {
         mutableStateOf(items.first())
     }
 
+    var selectedItemIndex by rememberSaveable {
+        mutableStateOf(0)
+    }
+
     NavigationBar {
         Row(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.inverseOnSurface)
         ) {
-            items.forEach { item ->
+            items.forEachIndexed { index,item ->
                 NavigationBarItem(
-                    selected = selectItem == item,
+                    selected = selectedItemIndex == index,
                     onClick = {
+                        selectedItemIndex = index
                         navController.navigate(item.route) {
 
-                            navController.graph.startDestinationRoute?.let { screen_route ->
-                                popUpTo(screen_route) {
+                            navController.graph.startDestinationRoute?.let { route ->
+                                popUpTo(route) {
                                     saveState = true
                                 }
                             }
