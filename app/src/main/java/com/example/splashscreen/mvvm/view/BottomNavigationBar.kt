@@ -11,11 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.splashscreen.ui.theme.BlueBottomBar
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
@@ -25,12 +28,7 @@ fun BottomNavigationBar(navController: NavController) {
         BottomScreensNavigation.Albums,
         BottomScreensNavigation.Download,
         BottomScreensNavigation.Favorite,
-        BottomScreensNavigation.Profile,
     )
-
-    var selectItem: BottomScreensNavigation by remember {
-        mutableStateOf(items.first())
-    }
 
     var selectedItemIndex by rememberSaveable {
         mutableStateOf(0)
@@ -39,7 +37,7 @@ fun BottomNavigationBar(navController: NavController) {
     NavigationBar {
         Row(
             modifier = Modifier
-                .background(MaterialTheme.colorScheme.inverseOnSurface)
+                .background(BlueBottomBar)
         ) {
             items.forEachIndexed { index,item ->
                 NavigationBarItem(
@@ -61,7 +59,7 @@ fun BottomNavigationBar(navController: NavController) {
                         Icon(
                             imageVector = item.icon,
                             contentDescription = item.label,
-                            tint = MaterialTheme.colorScheme.onBackground
+                            tint = Color.Black
                         )
                     },
                     label = {
@@ -74,4 +72,13 @@ fun BottomNavigationBar(navController: NavController) {
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun PreviewBottom() {
+
+    val navController = rememberNavController()
+    BottomNavigationBar(navController =navController )
+
 }
