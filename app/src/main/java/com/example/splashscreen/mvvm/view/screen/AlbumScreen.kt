@@ -1,4 +1,4 @@
-package com.example.splashscreen.mvvm.view.Screen
+package com.example.splashscreen.mvvm.view.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

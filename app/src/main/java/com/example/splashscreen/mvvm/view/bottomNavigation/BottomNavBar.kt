@@ -1,6 +1,6 @@
-package com.example.splashscreen.mvvm.view
+package com.example.splashscreen.mvvm.view.bottomNavigation
 
-import BottomScreensNavigation
+import BottomNavItem
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Icon
@@ -21,13 +21,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.splashscreen.ui.theme.BlueBottomBar
 
 @Composable
-fun BottomNavigationBar(navController: NavController) {
+fun BottomNavBar(navController: NavController) {
 
     val items = listOf(
-        BottomScreensNavigation.Home,
-        BottomScreensNavigation.Albums,
-        BottomScreensNavigation.Download,
-        BottomScreensNavigation.Favorite,
+        BottomNavItem.Home,
+        BottomNavItem.Albums,
+        BottomNavItem.Download,
+        BottomNavItem.Favorite,
     )
 
     var selectedItemIndex by rememberSaveable {
@@ -79,6 +79,6 @@ fun BottomNavigationBar(navController: NavController) {
 private fun PreviewBottom() {
 
     val navController = rememberNavController()
-    BottomNavigationBar(navController =navController )
+    BottomNavBar(navController = navController )
 
 }

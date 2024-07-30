@@ -1,4 +1,4 @@
-package com.example.splashscreen.mvvm.view.screen.Home
+package com.example.splashscreen.mvvm.view.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

@@ -7,28 +7,28 @@ import androidx.compose.material.icons.rounded.FavoriteBorder
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.ui.graphics.vector.ImageVector
 
-sealed class BottomScreensNavigation(val route: String, val label: String, val icon: ImageVector) {
-    object Home : BottomScreensNavigation(
+sealed class BottomNavItem(val route: String, val label: String, val icon: ImageVector) {
+    object Home : BottomNavItem(
         "Home",
         "Home",
         Icons.Rounded.Home
     )
-    object Albums : BottomScreensNavigation(
+    object Albums : BottomNavItem(
         "Albums",
         "Albums",
         Icons.Rounded.Album
     )
-    object Download : BottomScreensNavigation(
+    object Download : BottomNavItem(
         "Download",
         "Download",
         Icons.Rounded.CloudDownload
     )
-    object Favorite : BottomScreensNavigation(
+    object Favorite : BottomNavItem(
         "Favorite",
         "Favorite",
         Icons.Rounded.FavoriteBorder
     )
-    object Profile : BottomScreensNavigation(
+    object Profile : BottomNavItem(
         "Profile",
         "Profile",
         Icons.Rounded.AccountCircle

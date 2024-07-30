@@ -2,7 +2,7 @@ package com.example.splashscreen.mvvm.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
-data class NavigationItems(
+data class DrawerItem(
     val title: String,
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector,

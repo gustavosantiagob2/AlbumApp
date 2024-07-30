@@ -1,4 +1,4 @@
-package com.example.splashscreen.mvvm.view
+package com.example.splashscreen.mvvm.view.bottomNavigation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,12 +7,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.example.splashscreen.mvvm.viewmodel.BottomNav.BottomNavRout
 
 @Composable
-fun MainScreenView(){
+fun MainBottomNavigation(){
     val navController = rememberNavController()
     Scaffold(
-        bottomBar = { BottomNavigationBar(navController = navController) }
+        bottomBar = { BottomNavBar(navController = navController) }
     ) {
         padding ->
         Column(
@@ -20,7 +21,7 @@ fun MainScreenView(){
                 .fillMaxSize()
                 .padding(padding)
         ) {
-            NavigationGraph(navController = navController)
+            BottomNavRout(navController = navController)
         }
     }
 }

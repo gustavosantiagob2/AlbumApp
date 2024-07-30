@@ -1,33 +1,29 @@
-package com.example.splashscreen.mvvm.view
+package com.example.splashscreen.mvvm.viewmodel.BottomNav
 
-import BottomScreensNavigation
+import BottomNavItem
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.splashscreen.mvvm.view.Screen.AlbumScreen
-import com.example.splashscreen.mvvm.view.Screen.DownloadScreen
-import com.example.splashscreen.mvvm.view.Screen.FavoriteScreen
-import com.example.splashscreen.mvvm.view.Screen.HomeScreen
-import com.example.splashscreen.mvvm.view.Screen.ProfileScreen
+import com.example.splashscreen.mvvm.view.screen.HomeScreen
 
 @Composable
-fun NavigationGraph(navController: NavHostController) {
-    NavHost(navController, startDestination = BottomScreensNavigation.Home.route) {
-        composable(BottomScreensNavigation.Home.route) {
+fun BottomNavRout(navController: NavHostController) {
+    NavHost(navController, startDestination = BottomNavItem.Home.route) {
+        composable(BottomNavItem.Home.route) {
             HomeScreen()
         }
-        composable(BottomScreensNavigation.Albums.route) {
-            AlbumScreen()
+        composable(BottomNavItem.Albums.route) {
+            //AlbumScreen()
         }
-        composable(BottomScreensNavigation.Download.route) {
-            DownloadScreen()
+        composable(BottomNavItem.Download.route) {
+            //DownloadScreen()
         }
-        composable(BottomScreensNavigation.Favorite.route) {
-            FavoriteScreen()
+        composable(BottomNavItem.Favorite.route) {
+            //FavoriteScreen()
         }
-        composable(BottomScreensNavigation.Profile.route) {
-            ProfileScreen()
+        composable(BottomNavItem.Profile.route) {
+            //ProfileScreen()
         }
     }
 }

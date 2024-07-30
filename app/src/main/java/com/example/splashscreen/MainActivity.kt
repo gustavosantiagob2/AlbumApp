@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.splashscreen.mvvm.view.MainScreenView
+import com.example.splashscreen.mvvm.view.bottomNavigation.MainBottomNavigation
 import com.example.splashscreen.ui.theme.SplashScreenTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SplashScreenTheme {
                 Column {
-                    MainScreenView()
+                    MainBottomNavigation()
                 }
             }
         }
